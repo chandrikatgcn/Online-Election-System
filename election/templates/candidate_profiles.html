@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Candidate Profiles{% endblock %}
+
+{% block list %}
+    {% if not user.is_authenticated %}
+        <li><a href="{%url 'signup'%}">Sign up/Login</a></li>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Candidate Profiles</h3>
+            </div>
+            {% if candidates %}
+                {% for candidate in candidates %}
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <img src="{{candidate.avatar.url }}" class="img-responsive" style="height: 200px; width:200px">
+                            <h3>{{candidate.name}}</h3>
+                            <h4>{{candidate.roll}}</h4>
+                            <h4>{{candidate.post}}</h4>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

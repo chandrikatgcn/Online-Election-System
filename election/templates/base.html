@@ -1,0 +1,80 @@
+{%  load static %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Covered+By+Your+Grace|Sue+Ellen+Francisco">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css' media="screen">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+        <link rel="stylesheet" type="text/css" href="{% static 'election/stylesheet.css' %}"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret+One" type="text/css">
+    </head>
+
+    <body>
+{#    <div class="topnav">#}
+{#        <a class="active">Welcome to NITK elections</a>#}
+{#        <a class="navbtn" href="{% url 'candidate_profiles' %}">Candidate profile</a>#}
+{#        <a class="navbtn" href="{% url 'results' %}">Election results</a>#}
+{#    </div>#}
+
+
+<nav id="primary_nav">
+<a href="#" id="mobile_nav">&#9776;</a>
+		<ul>
+            <li><a href="{% url 'voter_signup' %}" >Voter SignUp</a></li>
+            <li><a href="{%  url 'voter_login' %}" >Voter SignIn</a></li>
+            <li><a href="{% url 'candidate_signup' %}">Candidate SignUp</a></li>
+            <li><a href="{%  url 'candidate_login' %}">Candidate SignIn</a></li>
+		</ul>
+</nav>
+<div class="active">
+    <span>Welcome to NITK elections</span>
+    <span><img src="/media/nitklogo.png" class="center"></span>
+{#    <span><button id="openNav" class="w3-button w3-teal w3-xlarge sidenavbar" onclick="w3_open() ">&#9776;</button></span>#}
+</div>
+
+
+
+
+{#<div class="w3-teal sidenavbar">#}
+{#    #}
+{#</div>#}
+
+
+
+
+
+    </body>
+<script>
+        $(document).ready(function(){
+	    $("#mobile_nav").click(function(){
+
+    //toggles nav and ensures other elements play nice too
+		if($("#primary_nav").css('left') < "0px"){
+			$("#primary_nav").animate({left: "0px"}, 200);
+			$("#wrapper_main_content").animate({left: "150px"}, 200);
+			$("#wrapper_main_content").css("overflow-y","hidden");
+			$("body").css("overflow-x","hidden");
+			$("#primary_nav").css("overflow-y","hidden");
+		}else{
+			$("#primary_nav").animate({left: "-115px"}, 200);
+			$("#wrapper_main_content").animate({left: "0px"}, 200);
+			$("#wrapper_main_content").css("overflow-y","hidden");
+			$("body").css("overflow-x","hidden");
+
+		}
+
+	});
+
+});//end
+    </script>
+    </html>
