@@ -19,62 +19,27 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret+One" type="text/css">
     </head>
 
-    <body>
-{#    <div class="topnav">#}
-{#        <a class="active">Welcome to NITK elections</a>#}
-{#        <a class="navbtn" href="{% url 'candidate_profiles' %}">Candidate profile</a>#}
-{#        <a class="navbtn" href="{% url 'results' %}">Election results</a>#}
-{#    </div>#}
 
+<body>
 
-<nav id="primary_nav">
-<a href="#" id="mobile_nav">&#9776;</a>
-		<ul>
-            <li><a href="{% url 'voter_signup' %}" >Voter SignUp</a></li>
-            <li><a href="{%  url 'voter_login' %}" >Voter SignIn</a></li>
-            <li><a href="{% url 'candidate_signup' %}">Candidate SignUp</a></li>
-            <li><a href="{%  url 'candidate_login' %}">Candidate SignIn</a></li>
-		</ul>
+<nav>
+		<ul class="sidebar">
+            <a href="{% url 'voter_signup' %}" >Voter SignUp</a>
+            <br>
+            <a href="{%  url 'voter_login' %}" >Voter SignIn</a>
+            <br>
+            <a href="{% url 'candidate_signup' %}">Candidate SignUp</a>
+            <br>
+            <a href="{%  url 'candidate_login' %}">Candidate SignIn</a>
+        </ul>
+
 </nav>
+
 <div class="active">
     <span>Welcome to NITK elections</span>
-    <span><img src="/media/nitklogo.png" class="center"></span>
-{#    <span><button id="openNav" class="w3-button w3-teal w3-xlarge sidenavbar" onclick="w3_open() ">&#9776;</button></span>#}
+    <span><img  class="center" src="/media/nitklogo.png"></span>
 </div>
 
-
-
-
-{#<div class="w3-teal sidenavbar">#}
-{#    #}
-{#</div>#}
-
-
-
-
-
-    </body>
-<script>
-        $(document).ready(function(){
-	    $("#mobile_nav").click(function(){
-
-    //toggles nav and ensures other elements play nice too
-		if($("#primary_nav").css('left') < "0px"){
-			$("#primary_nav").animate({left: "0px"}, 200);
-			$("#wrapper_main_content").animate({left: "150px"}, 200);
-			$("#wrapper_main_content").css("overflow-y","hidden");
-			$("body").css("overflow-x","hidden");
-			$("#primary_nav").css("overflow-y","hidden");
-		}else{
-			$("#primary_nav").animate({left: "-115px"}, 200);
-			$("#wrapper_main_content").animate({left: "0px"}, 200);
-			$("#wrapper_main_content").css("overflow-y","hidden");
-			$("body").css("overflow-x","hidden");
-
-		}
-
-	});
-
-});//end
-    </script>
-    </html>
+{% block body %} {% endblock %}
+</body>
+</html>
