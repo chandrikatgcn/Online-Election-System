@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        base2
+    </title>
+    <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
 ul {
   padding: 0;
@@ -21,14 +28,14 @@ label {
 }
 
 
-/*body {*/
-  /*height: 100vh;*/
-  /*font-weight: 500;*/
-  /*font-family: "Roboto", sans-serif;*/
-  /*background: linear-gradient(135deg, #8254EA 0%, #E86DEC 100%);*/
-  /*-webkit-font-smoothing: antialiased;*/
-  /*font-size: 12px;*/
-/*}*/
+body {
+  height: 100vh;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #8254EA 0%, #E86DEC 100%);
+  -webkit-font-smoothing: antialiased;
+  font-size: 12px;
+}
 
 body .swanky_title__social a {
   position: relative;
@@ -71,7 +78,6 @@ body .swanky .intro p {
   text-shadow: 0px 1px rgba(0, 0, 0, 0.26);
 }
 body .swanky_wrapper {
-
   width: 225px;
   height: auto;
   overflow: hidden;
@@ -81,7 +87,7 @@ body .swanky_wrapper {
 body .swanky_wrapper label {
   padding: 25px;
   float: left;
-  height: 100%;
+  height: 72px;
   border-bottom: 1px solid #293649;
   position: relative;
   width: 100%;
@@ -134,18 +140,17 @@ body .swanky_wrapper label .lil_arrow {
           transform: rotate(45deg);
 }
 body .swanky_wrapper__content {
-  position:absolute;
+  position: absolute;
   display: none;
   overflow: hidden;
   left: 0;
   width: 100%;
-    /*height: 100px;*/
 }
 body .swanky_wrapper__content li {
   width: 100%;
   opacity: 0;
   left: -100%;
-  background: #2a394f;
+  background: #15a4fa;
   padding: 25px 0px;
   text-indent: 25px;
   box-shadow: 0px 0px #126CA1  inset;
@@ -153,7 +158,7 @@ body .swanky_wrapper__content li {
   position: relative;
 }
 body .swanky_wrapper__content li:hover {
-  background: darkblue;
+  background: #0c93e4;
   box-shadow: 3px 0px #126CA1  inset;
   transition: box-shadow .3s linear,text-indent .3s linear;
   text-indent: 31px;
@@ -178,14 +183,13 @@ input[type="radio"]:checked + label > .lil_arrow {
   border-right: 2px solid #14a3f9;
 }
 
-input[type='radio']:checked + label{
-  height:200px;
+input[type='radio']:checked + label {
+  height: 325px;
   background: #212e41;
   text-indent: 4px;
   transition-property: height;
   transition-duration: .6s;
   -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    /*clear:both;*/
 }
 
 input[type='radio']:checked + label .bar {
@@ -264,6 +268,16 @@ input[type='radio']:checked + label li:nth-of-type(4) {
 .brand img {
   width: 30px;
 }
+ body
+        {
+        background: linear-gradient(#33cccc,#99ff33);
+        background-repeat:no-repeat;
+        background-attachment: fixed;
+        height: 100%;
+        margin:0;
+        padding:0;
+ }
+
 
 
 nav {
@@ -322,73 +336,36 @@ nav:hover {
     color: greenyellow;
 }
 
-/*body*/
-        /*{*/
-        /*background: linear-gradient(#33cccc,#99ff33);*/
-        /*background-repeat:no-repeat;*/
-        /*background-attachment: fixed;*/
-        /*height: 100%;*/
-        /*margin:0;*/
-        /*padding:0;*/
- /*}*/
 
 
 
-/*nav {*/
-  /*background-color: black;*/
-  /*height: 100vh;*/
-  /*width: 200px;*/
-  /*position: fixed;*/
-  /*transform: translateX(-200px);*/
-  /*transition: transform 0.3s ease-in-out;*/
-/*}*/
+.active {
+    color: black;
+    font-size: 50px;
+    font-family: Lobster, serif;
+    text-align: center;
+    margin-top: 10px;
+}
+.center {
+    {# display: block;#}
+    {#margin-left: 70%;#}
+    {#margin-right: auto;#}
+    {#margin-top:-80px;#}
 
-/*nav:after {*/
-  /*content: '';*/
-  /*background: black;*/
-  /*height: 80px;*/
-  /*width: 70px;*/
-  /*position: absolute;*/
-  /*right: -40px;*/
-  /*top: 40px;*/
-  /*border-radius: 50%;*/
-/*}*/
+    width:10%;
+}
+    </style>
+    <script>
 
-/*nav:hover {*/
-  /*transform: translateX(0px);*/
-/*}*/
+    </script>
+</head>
+<body>
+<div class="active">
+    <span>Welcome to NITK elections</span>
+    <span><img  class="center" src="/media/boy2.jpg"></span>
 
+</div>
 
-
-/*.active {*/
-    /*color: black;*/
-    /*font-size: 50px;*/
-    /*font-family: Lobster, serif;*/
-    /*text-align: center;*/
-    /*margin-top: 10px;*/
-/*}*/
-/*.center {*/
-    /*!*display: block;*!*/
-    /*!*margin-left: 70%;*!*/
-    /*!*margin-right: auto;*!*/
-    /*!*margin-top:-80px;*!*/
-    /*width:10%;*/
-/*}*/
-
-/*.sidebar a{*/
-    /*font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;*/
-    /*float: left;*/
-    /*text-align: center;*/
-    /*padding: 14px 16px;*/
-    /*text-decoration: none;*/
-    /*font-size: 15px;*/
-    /*color: deepskyblue;*/
-
-/*}*/
-
-/*.sidebar a:hover{*/
-    /*color: greenyellow;*/
-/*}*/
-
-
-
+<img src="/media/boy2.jpg">
+</body>
+</html>
