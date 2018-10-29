@@ -71,7 +71,7 @@ body .swanky .intro p {
   text-shadow: 0px 1px rgba(0, 0, 0, 0.26);
 }
 body .swanky_wrapper {
-
+    position: absolute;
   width: 225px;
   height: auto;
   overflow: hidden;
@@ -81,7 +81,7 @@ body .swanky_wrapper {
 body .swanky_wrapper label {
   padding: 25px;
   float: left;
-  height: 100%;
+    height: auto;
   border-bottom: 1px solid #293649;
   position: relative;
   width: 100%;
@@ -243,27 +243,7 @@ input[type='radio']:checked + label li:nth-of-type(4) {
   }
 }
 
-.love p {
-  color: white;
-  font-weight: normal;
-  font-family: 'Open Sans', sans-serif;
-}
-.love a {
-  color: white;
-  font-weight: 700;
-  text-decoration: none;
-}
-.love img {
-  position: relative;
-  top: 3px;
-  margin: 0px 4px;
-  width: 10px;
-}
 
-
-.brand img {
-  width: 30px;
-}
 
 
 nav {
@@ -293,17 +273,22 @@ nav:hover {
 
 
 .active {
+
     color: black;
     font-size: 50px;
-    font-family: Lobster, serif;
+    /*font-family: Lobster, serif;*/
     text-align: center;
     margin-top: 10px;
+    font-weight: 500;
+    font-family:Lobster, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  /*font-size: 12px;*/
 }
 .center {
-    /*display: block;*/
-    /*margin-left: 70%;*/
-    /*margin-right: auto;*/
-    /*margin-top:-80px;*/
+    display: block;
+    margin-left: 72%;
+    margin-right: auto;
+    margin-top:-60px;
     width:10%;
 }
 

@@ -54,84 +54,83 @@
     <script>
 
     </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
     <link rel="stylesheet" type="text/css" href="{% static 'election/stylesheet.css' %}"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css' media="screen">
 </head>
 <body>
-{#<div class="active">#}
-{#    <span>Welcome to NITK elections</span>#}
-{#    <span><img  class="center" src="/media/nitklogo.png"></span>#}
-{##}
-{#</div>#}
+<nav>
+		<ul class="sidebar">
+            <img src='/media/signup2.png' style="height: 32px;width: 32px;">
+            <span> <a href="{% url 'voter_signup' %}" >Voter SignUp</a></span>
+{#            <a href="{% url 'voter_signup' %}" >Voter SignUp</a>#}
+            <br>
+            <a href="{%  url 'voter_login' %}" >Voter SignIn</a>
+            <br>
+            <a href="{% url 'candidate_signup' %}">Candidate SignUp</a>
+            <br>
+            <a href="{%  url 'candidate_login' %}">Candidate SignIn</a>
+        </ul>
 
- <div class='swanky_wrapper'>
-    <input id='signup' name='radio' type='radio'>
-    <label for='signup' class="fit">
-      <img src='/media/signup2.png' style="height: 32px;width: 32px;">
-      <span>signup</span>
-      <div class='lil_arrow'></div>
-      <div class='bar'></div>
-      <div class='swanky_wrapper__content'>
-        <ul>
-            <li><a href="{% url 'candidate_signup' %}" style="color: white;text-decoration: none">Sign up as candidate</a></li>
-            <li><a href="{% url 'voter_signup' %}" style="color: white;text-decoration: none">Sign up as Voter</a></li>
-        </ul>
-      </div>
-    </label>
-    <input id='login' name='radio' type='radio'>
-    <label for='login' class="fit">
-      <img src='/media/login.png' style="height: 32px;width: 32px;">
-      <span>login</span>
-      <div class='lil_arrow'></div>
-      <div class='bar'></div>
-      <div class='swanky_wrapper__content'>
-        <ul>
-            <li><a href="{% url 'candidate_login' %}" style="color: white;text-decoration: none">Login as Candidate</a></li>
-            <li><a href="{% url 'voter_login' %}" style="color: white;text-decoration: none">Login as Voter</a></li>
-        </ul>
-      </div>
-    </label>
-    <input id='Candidates' name='radio' type='radio'>
-    <label for='Candidates' class="fit">
-      <img src='/media/candidate_profiles.png' style="height: 32px;width: 32px;">
-      <span>Candidates</span>
-      <div class='lil_arrow'></div>
-      <div class='bar'></div>
-      <div class='swanky_wrapper__content'>
-        <ul>
-          <li><a href="{% url 'candidate_profiles' %}"style="color: white;text-decoration: none">View Candidates</a></li>
-        </ul>
-      </div>
-    </label>
-    <input id='Vote' name='radio' type='radio'>
-    <label for='Vote'>
-      <img src='/media/vote.png' style="height: 32px;width: 32px;">
-      <span>Vote</span>
+</nav>
+<div class="active" >
+    <span >Welcome to NITK elections</span>
+    <span><img  class="center" src="/media/nitklogo.png"></span>
+
+</div>
+
+{# <div class='swanky_wrapper'>#}
+{#    <input id='signup' name='radio' type='radio'>#}
+{#    <label for='signup' class="fit">#}
+{#      <img src='/media/signup2.png' style="height: 32px;width: 32px;">#}
+{#      <span>signup</span>#}
 {#      <div class='lil_arrow'></div>#}
 {#      <div class='bar'></div>#}
 {#      <div class='swanky_wrapper__content'>#}
 {#        <ul>#}
-{#          <li>New User</li>#}
-{#          <li>User Groups</li>#}
-{#          <li>Permissions</li>#}
-{#          <li>Passwords</li>#}
+{#            <li><a href="{% url 'candidate_signup' %}" style="color: white;text-decoration: none">Sign up as candidate</a></li>#}
+{#            <li><a href="{% url 'voter_signup' %}" style="color: white;text-decoration: none">Sign up as Voter</a></li>#}
 {#        </ul>#}
 {#      </div>#}
-    </label>
-    <input id='Result' radio='radio' type='radio'>
-    <label for='Result'>
-      <img src='/media/results.png' style="height: 32px;width: 32px;">
-      <span>Result</span>
+{#    </label>#}
+{#    <input id='login' name='radio' type='radio'>#}
+{#    <label for='login' class="fit">#}
+{#      <img src='/media/login.png' style="height: 32px;width: 32px;">#}
+{#      <span>login</span>#}
 {#      <div class='lil_arrow'></div>#}
+{#      <div class='bar'></div>#}
 {#      <div class='swanky_wrapper__content'>#}
 {#        <ul>#}
-{#          <li>Databases</li>#}
-{#          <li>Design</li>#}
-{#          <li>Change User</li>#}
-{#          <li>Log Out</li>#}
+{#            <li><a href="{% url 'candidate_login' %}" style="color: white;text-decoration: none">Login as Candidate</a></li>#}
+{#            <li><a href="{% url 'voter_login' %}" style="color: white;text-decoration: none">Login as Voter</a></li>#}
 {#        </ul>#}
 {#      </div>#}
-    </label>
-  </div>
+{#    </label>#}
+{#    <input id='Candidates' name='radio' type='radio'>#}
+{#    <label for='Candidates' class="fit">#}
+{#      <img src='/media/candidate_profiles.png' style="height: 32px;width: 32px;">#}
+{#      <span>Candidates</span>#}
+{#      <div class='lil_arrow'></div>#}
+{#      <div class='bar'></div>#}
+{#      <div class='swanky_wrapper__content'>#}
+{#        <ul>#}
+{#          <li><a href="{% url 'candidate_profiles' %}"style="color: white;text-decoration: none">View Candidates</a></li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </label>#}
+{#    <input id='Vote' name='radio' type='radio'>#}
+{#    <label for='Vote'>#}
+{#      <img src='/media/vote.png' style="height: 32px;width: 32px;">#}
+{#      <span>Vote</span>#}
+{#    </label>#}
+{#    <input id='Result' radio='radio' type='radio'>#}
+{#    <label for='Result'>#}
+{#      <img src='/media/results.png' style="height: 32px;width: 32px;">#}
+{#      <span>Result</span>#}
+{##}
+{#    </label>#}
+{#  </div>#}
+
 {% block body %} {% endblock %}
 </body>
 </html>

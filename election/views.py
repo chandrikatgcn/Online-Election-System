@@ -41,8 +41,11 @@ class CandidateSignUpView(CreateView):
         return redirect('candidate_details', pk=user.candidate.pk)
 
 
-class SignUpView(TemplateView):
-    template_name = 'signup.html'
+# class SignUpView(TemplateView):
+    # template_name = 'signup.html'
+class HomePage(TemplateView):
+    template_name = 'base3.html'
+
 
 
 class VoterSignUpView(CreateView):

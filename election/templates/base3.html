@@ -1,0 +1,102 @@
+{%  load static %}
+{% load staticfiles %}
+
+<html>
+<head>
+	<title>Home</title>
+{#	<script type="text/javascript" src="{% static "js/jquery-3.3.1.min.js" %}"></script>#}
+{#    <script src="{% static "js/styling.js" %}"></script>#}
+    <link rel="stylesheet" type="text/css" href="{% static 'election/styling.css' %}"/>
+<!-- {#    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />#} -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css' media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+</head>
+
+<body>
+{#	<nav class="navigation">#}
+{#        <ul class="mainmenu">#}
+{#            <img src='/media/signup2.png' style="height: 32px;width: 32px;">#}
+{#            <span><li><a href="">SignUp</a>#}
+{#              <ul class="submenu">#}
+{#                  <li><a href="{% url 'candidate_signup' %}" style="color: white;text-decoration: none">Sign up as candidate</a></li>#}
+{#                  <li><a href="{% url 'voter_signup' %}" style="color: white;text-decoration: none">Sign up as Voter</a></li>#}
+{#              </ul>#}
+{#            </li>#}
+{#                </span>#}
+{#             <img src='/media/login.png' style="height: 32px;width: 32px;">#}
+{#            <span>#}
+{#            <li><a href="">Login</a>#}
+{#            <ul class="submenu">#}
+{#                <li><a href="{% url 'candidate_login' %}" style="color: white;text-decoration: none">Login as Candidate</a></li>#}
+{#                <li><a href="{% url 'voter_login' %}" style="color: white;text-decoration: none">Login as Voter</a></li>#}
+{#            </ul>#}
+{#            </li>#}
+{#                </span>#}
+{#            <img src='/media/candidate_profiles.png' style="height: 32px;width: 32px;">#}
+{#            <span>#}
+{#            <li><a href="">Candidates</a>#}
+{#                <ul class="submenu">#}
+{#                  <li><a href="{% url 'candidate_profiles' %}"style="color: white;text-decoration: none">View Candidates</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#                </span>#}
+{#            <img src='/media/results.png' style="height: 32px;width: 32px;">#}
+{#            <span>#}
+{#                <li><a href="{% url 'results' %}">Election Results</a></li>#}
+{#                </span>#}
+{##}
+{##}
+{#          {% if user.is_authenticated %}#}
+{#                    {% if user.is_voter %}#}
+{#                        <li><a href="{% url 'voter_details' pk=user.voter.pk %}">My Profile</a></li>#}
+{#                        {% if not user.voter.has_voted %}#}
+{#                            <li><a href="{% url 'vote_preview' %}">Vote</a></li>#}
+{#                        {% endif %}#}
+{#                    {% endif %}#}
+{#                    <li class="active"><a href="#">Signed in as {{ user.username }}</a></li>#}
+{#                    <li><a href="{%  url 'logout' %}?next={% url 'signup' %}"> Logout</a></li>#}
+{#                {% else %}#}
+{#                    <li><a href="{% url 'admin:login' %}">Admin</a></li>#}
+{#                {% endif %}#}
+{#         </ul>#}
+{#    </nav>#}
+<div id="mySidenav" class="sidenav">
+    <span><a href="{% url 'candidate_signup' %}" style="color: black;text-decoration: none" id="c_signup">Candidate Signup<img src='/media/signup2.png' style="height: 32px;width: 32px;"></a></span>
+    <span><a href="{% url 'voter_signup' %}" style="color: black;text-decoration: none" id="v_signup">Voter Signup<img src='/media/voter_signup1.png' style="height: 32px;width: 32px;"></a></span>
+    <span><a href="{% url 'candidate_login' %}" style="color: black;text-decoration: none" id="c_login">Candidate Login<img src='/media/login.png' style="height: 32px;width: 32px;"></a></span>
+    <span><a href="{% url 'voter_login' %}" style="color: black;text-decoration: none"id="v_login">Voter Login<img src='/media/voter_login.png' style="height: 32px;width: 32px;"></a></span>
+    <span><a href="{% url 'candidate_profiles' %}"style="color: black;text-decoration: none" id="candidate">View Candidates<img src='/media/candidate_profiles.png' style="height: 32px;width: 32px;"></a></span>
+    <span><a href="{% url 'results' %}" style="color: black;text-decoration: none" id="result">Election Results<img src='/media/results.png' style="height: 32px;width: 32px;"></a></span>
+
+</div >
+
+    <div class="active" >
+
+        Welcome to <b><i>NITK elections</i></b>
+        <img  class="center" src="/media/nitklogo.png">
+    </div>
+    <div id="home_button">
+        <a href="{% url 'home' %}"><img src='/media/home.png' style="height: 32px;width: 32px;"></a>
+    </div>
+
+    <div class ="card">
+{#        <div style="font-family: 'Playfair Display';font-size: 80px;background: linear-gradient(to right, #30CFD0 0%, #330867 100%);-webkit-background-clip: text;#}
+{#	-webkit-text-fill-color: transparent;"> Beware#}
+{#            <br>#}
+{#            Do Your Share#}
+{#        </div>#}
+{#        <br>#}
+{#        <div style="font-size: 150px;font-family:OpenSymbol;color: #89D8F9">#}
+{#        VOTE !#}
+{#        </div>#}
+    </div>
+
+           <canvas id="homecanvas"></canvas>
+    <script type="text/javascript" src="{% static "js/styling.js" %}"></script>
+
+{% block body %} {% endblock %}
+    </body>
+</html>
