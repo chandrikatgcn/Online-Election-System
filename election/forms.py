@@ -12,8 +12,8 @@ class CandidateSignUpForm(UserCreationForm, forms.ModelForm):
                     ('Net Councillor', 'Net Councillor'), ]
     name = forms.CharField(max_length=30)
     roll = forms.CharField(max_length=7)
-    avatar = forms.ImageField()
     post = forms.CharField(label='Select the Post', widget=forms.Select(choices=POST_CHOICES))
+    avatar = forms.ImageField()
 
     class Meta(UserCreationForm.Meta):
         model = User
@@ -26,8 +26,8 @@ class CandidateSignUpForm(UserCreationForm, forms.ModelForm):
         candidate = Candidate.objects.create(user=user)
         candidate.name = self.cleaned_data.get('name')
         candidate.roll = self.cleaned_data.get('roll')
-        candidate.avatar = self.cleaned_data.get('avatar')
         candidate.post = self.cleaned_data.get('post')
+        candidate.avatar = self.cleaned_data.get('avatar')
 
         try:
             w, h = get_image_dimensions(candidate.avatar)

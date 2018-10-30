@@ -72,15 +72,16 @@
     <span><a href="{% url 'results' %}" style="color: black;text-decoration: none" id="result">Election Results<img src='/media/results.png' style="height: 32px;width: 32px;"></a></span>
 
 </div >
-
-    <div class="active" >
-
-        Welcome to <b><i>NITK elections</i></b>
-        <img  class="center" src="/media/nitklogo.png">
-    </div>
-    <div id="home_button">
-        <a href="{% url 'home' %}"><img src='/media/home.png' style="height: 32px;width: 32px;"></a>
-    </div>
+{#    <div class="hello" style="position: fixed;z-index:8;background-color:white;height: 100%;width: 100">#}
+{##}
+{#    </div>#}
+        <div class="active" >
+            Welcome to <b><i>NITK elections</i></b>
+            <img  class="center" src="/media/nitklogo.png">
+        </div>
+        <div id="home_button">
+            <a href="{% url 'home' %}"><img src='/media/home.png' style="height: 32px;width: 32px;"></a>
+        </div>
 
     <div class ="card">
 {#        <div style="font-family: 'Playfair Display';font-size: 80px;background: linear-gradient(to right, #30CFD0 0%, #330867 100%);-webkit-background-clip: text;#}
@@ -93,8 +94,9 @@
 {#        VOTE !#}
 {#        </div>#}
     </div>
-
-           <canvas id="homecanvas"></canvas>
+    <div>
+        <canvas id="homecanvas"></canvas>
+    </div>
     <script type="text/javascript" src="{% static "js/styling.js" %}"></script>
 
 {% block body %} {% endblock %}

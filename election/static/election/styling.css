@@ -4,7 +4,7 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  /*overflow: hidden;*/
   /*z-index: 2;*/
 }
 
@@ -13,9 +13,8 @@ html, body {
     width: 100%;
     height:100%;
     background: #0D0C47;
-    top: 20%;
-
-  /*z-index: 1;*/
+    top: 17%;
+    /*z-index: 3;*/
 }
 
 
@@ -29,13 +28,14 @@ html, body {
     top: 20px;
     font-size: 40px;
     border-radius:10px ;
-    position: absolute;
     text-decoration: none;
     color: black;
+    position: fixed;
+    /*z-index:3;*/
 }
 
 .active {
-    position: absolute;
+    position: fixed;
     color: black;
     font-size: 50px;
     font-family: 'Playfair Display', serif;
@@ -44,6 +44,7 @@ html, body {
     top: 10px;
     font-weight: 500;
     -webkit-font-smoothing: antialiased;
+    /*z-index: 3;*/
 
 }
 .center {
