@@ -1,3 +1,8 @@
+//auto expand textarea
+function adjust_textarea(h) {
+    h.style.height = "45px";
+    h.style.height = (h.scrollHeight)+"px";
+}
 
 var Canvas = document.getElementById('homecanvas');
 var ctx = Canvas.getContext('2d');

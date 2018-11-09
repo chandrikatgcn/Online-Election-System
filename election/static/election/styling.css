@@ -4,7 +4,7 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  /*overflow: hidden;*/
+  overflow: hidden;
   /*z-index: 2;*/
 }
 
@@ -12,45 +12,53 @@ html, body {
     position: absolute;
     width: 100%;
     height:100%;
-    background: #0D0C47;
+    background: white;
     top: 17%;
     /*z-index: 3;*/
 }
-
-
+.wrap
+{
+    background-color: #eeebec;
+    height: 100%;
+    width: auto;
+    /*position:fixed;*/
+    /*z-index: 4;*/
+}
 #container {
-  position: relative;
+  position: fixed;
 }
 
 #home_button{
-    background-color:white;
+    /*background-color:white;*/
     left: 30px;
     top: 20px;
-    font-size: 40px;
-    border-radius:10px ;
-    text-decoration: none;
-    color: black;
+    font-size: 30px;
+    /*border-radius:10px ;*/
+    /*text-decoration: none;*/
+    /*!*color: black;*!*/
     position: fixed;
-    /*z-index:3;*/
+    z-index:3;
 }
 
 .active {
     position: fixed;
     color: black;
     font-size: 50px;
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif;*/
+    font-family: 'Handlee', cursive;
     text-align: center;
     left: 24%;
     top: 10px;
     font-weight: 500;
     -webkit-font-smoothing: antialiased;
-    /*z-index: 3;*/
+    z-index: 3;
+
 
 }
 .center {
     /*display: block;*/
     position: absolute;
-    left: 100%;
+    left: 110%;
     right: auto;
     top:-11px;
     width:20%;
@@ -64,7 +72,7 @@ html, body {
     position: absolute;
     min-height: 400px;
     width: 75%;
-    box-shadow: 5px 10px 8px black;
+    box-shadow:5px 5px 10px 6px gray;
     transform: rotate(0deg);
     border-radius: 500px;
     opacity: 1.0;
@@ -82,9 +90,10 @@ html, body {
     /*color: white; !* White text color *!*/
     border-radius: 0 50px 50px 0; /* Rounded corners on the top right and bottom right side */
     z-index: 2;
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif;*/
+    font-family: 'Antic Slab', serif;
     font-weight: bold;
-    background-color: white;
+    background-color: #eeebec;
 }
 
 #mySidenav a:hover {
@@ -124,4 +133,45 @@ html, body {
     top: 420px;
     background-color: white; /* Light Black */
     z-index: 2;
+}
+#myprofile{
+    top: 480px;
+    background-color: white; /* Light Black */
+    z-index: 2;
+
+}
+#votepreview{
+    top: 540px;
+    background-color: white; /* Light Black */
+    z-index: 2;
+}
+.signedinornot{
+    /*height: 60px;*/
+    padding: 10px;
+    border-radius: 10px;
+    float: right;
+    background-color: #C1BFF2;
+    font-family: 'Handlee', cursive;
+    z-index: 5;
+    text-decoration: none;
+    font-size: large;
+    top:10px;
+    position: fixed;
+    right: 30px ;
+}
+
+#logout{
+     padding: 6px;
+    border-radius: 10px;
+    float: right;
+    background-color: #C1BFF2;
+    width: 170px;
+    font-family: 'Handlee', cursive;
+    z-index: 5;
+    text-decoration: none;
+    font-size: large;
+    top:60px;
+    position: fixed;
+    right: 30px ;
+
 }

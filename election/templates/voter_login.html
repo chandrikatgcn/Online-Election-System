@@ -1,40 +1,61 @@
-{% extends 'base3.html' %}
-{% block title %}Log In{% endblock %}
 
-{% block body %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h3>Log In as Voter </h3>
-                    {% if error_message %}
-                        <p><strong>{{ error_message }}</strong></p>
-                    {% endif %}
-                    <form role="form" action="{% url 'voter_login'%}" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <label class="control-label " for="id_username">Username</label>
-                            <input id="id_username" maxlength="30" autofocus name="username" type="text">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label" for="id_password">Password</label>
-                            <input id="id_password" maxlength="30" name="password" type="password">
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-12">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="panel-footer">
-                    Don't have an account? <a href="{% url 'voter_signup' %}">Click here</a> to register.
-                </div>
-            </div>
-        </div>
+
+{% load static %}
+{% load staticfiles %}
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'election/forms.css' %}"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+    <div id="home_button">
+        <a href="{% url 'home' %}" style="font-family:Open Sans Condensed,Serif;color: black;text-decoration: none;"><b>HOME</b><img src='/media/home.png' style="height: 32px;width: 32px;"></a>
     </div>
 
-</div>
+    <div class="form-style-8">
+          <h2 style="color: white">Voter Login</h2>
+            {% if error_message %}
+                <p style="color: red;"><strong>{{ error_message }}</strong></p>
+            {% endif %}
+          <form method="post" role="form" action=""  enctype="multipart/form-data">
+                 {% csrf_token %}
+                 <div class="form-group">
+                            <label class="control-label" for="id_username">
+                                Username
+                            </label>
+                            <input id="id_username" maxlength="30" name="username" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="id_password">
+                                Password
+                            </label>
+                           <input id="id_password" maxlength="30" name="password" type="password">
+                        </div>
+                  <br>
+              <input type="submit" value="SUBMIT" />
+                  <br>
 
-{% endblock %}
+          </form>
+        <br>
+            <div class="panel-footer">
+                Don't have an account? <a href={% url "voter_signup" %}>Click here</a> to SignUp.
+            </div>
+    </div>
+{#    {% if user.is_authenticated %}#}
+{#                    {% if user.is_voter %}#}
+{#                        <li><a href="{% url 'voter_details' pk=user.voter.pk %}">My Profile</a></li>#}
+{#                        {% if not user.voter.has_voted %}#}
+{#                            <li><a href="{% url 'vote_preview' %}">Vote</a></li>#}
+{#                        {% endif %}#}
+{#                    {% endif %}#}
+{#                    <li class="active"><a href="#">Signed in as {{ user.username }}</a></li>#}
+{#                    <li><a href="{%  url 'logout' %}?next={% url 'home' %}"> Logout</a></li>#}
+{#                {% else %}#}
+{#                    <li><a href="{% url 'admin:login' %}">Admin</a></li>#}
+{#                {% endif %}#}
+
+</body>
+</html>
+

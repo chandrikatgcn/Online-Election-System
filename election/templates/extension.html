@@ -1,0 +1,41 @@
+{%  load static %}
+{% load staticfiles %}
+
+<html>
+<head>
+	<title>Home</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'election/styling.css' %}"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css' media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Antic+Slab|Handlee|Shadows+Into+Light" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="active" >
+            Welcome to <b><i>NITK elections</i></b>
+            <img  class="center" src="/media/nitklogo_color.png">
+        </div>
+        <div id="home_button">
+            <a href="{% url 'home' %}" style="font-family:'Shadows Into Light', cursive;color: orange;text-decoration: none">Home<img src='/media/home.png' style="height: 32px;width: 32px;"></a>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="signedinornot">
+            <a href="#" style="text-decoration: none; color:black;"><b>Signed in as {{ user.username }}</b></a>
+            <br>
+            <a id="logout" href="{%  url 'logout' %}?next={% url 'home' %}"style="text-decoration: none;  color: black;">        Logout</a>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <div>
+        <canvas id="homecanvas"></canvas>
+    </div>
+    <script type="text/javascript" src="{% static "js/styling.js" %}"></script>
+{% block body %} {% endblock %}
+    </body>
+</html>

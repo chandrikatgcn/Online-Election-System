@@ -1,27 +1,18 @@
-{%  load static %}
+{% extends 'base3.html' %}
+{% load static   %}
 {% load staticfiles %}
+{% block title %}Home{% endblock %}
 
-<html>
-<head>
-	<title>Home</title>
-{#	<script type="text/javascript" src="{% static "js/jquery-3.3.1.min.js" %}"></script>#}
-{#    <script src="{% static "js/styling.js" %}"></script>#}
-    <link rel="stylesheet" type="text/css" href="{% static 'election/styling.css' %}"/>
-<!-- {#    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />#} -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css' media="screen">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Antic+Slab|Handlee|Shadows+Into+Light" rel="stylesheet">
-</head>
-
-<body>
+{% block body %}
     <div id="mySidenav" class="sidenav">
+
+        {% if not user.is_authenticated %}
         <span><a href="{% url 'candidate_signup' %}" style="color: black;text-decoration: none" id="c_signup">Candidate Signup<img src='/media/signup2.png' style="height: 32px;width: 32px;"></a></span>
         <span><a href="{% url 'voter_signup' %}" style="color: black;text-decoration: none" id="v_signup">Voter Signup<img src='/media/voter_signup1.png' style="height: 32px;width: 32px;"></a></span>
         <span><a href="{% url 'candidate_login' %}" style="color: black;text-decoration: none" id="c_login">Candidate Login<img src='/media/login.png' style="height: 32px;width: 32px;"></a></span>
         <span><a href="{% url 'voter_login' %}" style="color: black;text-decoration: none"id="v_login">Voter Login<img src='/media/voter_login.png' style="height: 32px;width: 32px;"></a></span>
+        {%  endif%}
+
         <span><a href="{% url 'candidate_profiles' %}"style="color: black;text-decoration: none" id="candidate">View Candidates<img src='/media/candidate_profiles.png' style="height: 32px;width: 32px;"></a></span>
         <span><a href="{% url 'results' %}" style="color: black;text-decoration: none" id="result">Election Results<img src='/media/results.png' style="height: 32px;width: 32px;"></a></span>
          {% if user.is_authenticated %}
@@ -37,25 +28,9 @@
          {% endif %}
          {% block list %}{% endblock %}
 
-    </div >
+</div >
 
-    <div class="wrap">
-        <div class="active" >
-            Welcome to <b><i>NITK elections</i></b>
-            <img  class="center" src="/media/nitklogo_color.png">
-        </div>
-        <div id="home_button">
-            <a href="{% url 'home' %}" style="font-family:'Shadows Into Light', cursive;color: orange;text-decoration: none">Home<img src='/media/home.png' style="height: 32px;width: 32px;"></a>
-        </div>
-        {% if user.is_authenticated %}
-        <div class="signedinornot">
-            <a href="#" style="text-decoration: none; color:black;"><b>Signed in as {{ user.username }}</b></a>
-            <br>
-            <a id="logout" href="{%  url 'logout' %}?next={% url 'home' %}"style="text-decoration: none;  color: black;">        Logout</a>
-        </div>
-        {% endif %}
 
-    </div>
     <div class ="card">
 
     </div>
@@ -63,6 +38,4 @@
         <canvas id="homecanvas"></canvas>
     </div>
     <script type="text/javascript" src="{% static "js/styling.js" %}"></script>
-{% block body %} {% endblock %}
-    </body>
-</html>
+{%  endblock %}
